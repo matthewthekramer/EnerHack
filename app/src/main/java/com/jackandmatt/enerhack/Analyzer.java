@@ -20,9 +20,8 @@ public class Analyzer {
 
     public void run() {
         String message = "";
-        while(running) {
-            message = (packetAnalyzer("localhost"));
-        }
+        message = (packetAnalyzer("api/turnon/0"));
+        System.out.println(message);
     }
 
     public String packetAnalyzer(String request) {
