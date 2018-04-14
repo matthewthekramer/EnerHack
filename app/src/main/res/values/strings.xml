@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">EnerHack</string>
+    <string name="points_title">EnerScore</string>
+    <string name="fun_fact1">A compact fluorescent light bulb uses 75 percent less energy than a regular bulb and it can last up to four years.</string>
+    <string name="fun_fact2">Approximately, 75% of electricity used to power home electronics is consumed while the products are off.</string>
+    <string name="fun_fact3"> Heating water can account for 14 to 25 percent of the energy consumed in your home</string>
+    <string name="fun_fact4">Lighting makes up about 10 percent of home energy costs. </string>
 </resources>

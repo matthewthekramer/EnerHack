@@ -13,6 +13,12 @@
     <style name="h1" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="h2" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 </resources>

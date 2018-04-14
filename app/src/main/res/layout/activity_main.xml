@@ -4,27 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColorPrimary"
     tools:context="com.jackandmatt.enerhack.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/points_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/points_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="EnerScore"
             style="@style/h1"
+            android:gravity="center_horizontal" />
 
-            />
+        <TextView
+            android:id="@+id/points_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="533"
+            style="@style/h1"
+            android:layout_below="@id/points_title"
+            android:gravity="center_horizontal" />
+
     </RelativeLayout>
+    <View
+        android:id="@+id/linebrk1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/points_layout"
+        android:background="@color/lineBreak"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/two_panel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Current Consumption"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingBottom="20dp"
+        android:paddingTop="15dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layout_below="@id/linebrk1">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/goal_title"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                style="@style/h1"
+                android:text="Today's Limit"/>
+            <ProgressBar
+                android:id="@+id/determinateBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/goal_title"
+                android:progressDrawable="@drawable/progress"
+                android:progress="25"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+            <TextView
+                android:id="@+id/fun_fact_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="EnerFact"
+                style="@style/h1"/>
+            <TextView
+                android:id="@+id/fun_fact_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/h2"
+                android:layout_below="@id/fun_fact_title"
+                android:text="@string/fun_fact2"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:id="@+id/linebrk2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/two_panel"
+        android:background="@color/lineBreak"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linebrk2"
+        android:paddingTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            style="@style/h2"
+            android:text="Device x is costing you the most points"/>
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Turn Off"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+
+
+
 
 </RelativeLayout>
