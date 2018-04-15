@@ -31,7 +31,7 @@ public class ChallengesActivity extends AppCompatActivity {
         // preparing list data
         prepareListData();
 
-        ProgressBar bar = (ProgressBar) findViewById(R.id.determinateBar);
+
 
 
         listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
