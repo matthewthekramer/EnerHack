@@ -5,4 +5,11 @@
     <string name="fun_fact2">Approximately, 75% of electricity used to power home electronics is consumed while the products are off.</string>
     <string name="fun_fact3"> Heating water can account for 14 to 25 percent of the energy consumed in your home</string>
     <string name="fun_fact4">Lighting makes up about 10 percent of home energy costs. </string>
+
+    <string-array name="node_options">
+        <item>Fan</item>
+        <item>Light</item>
+        <item>Phone-Charger</item>
+        <item>mini-fridge</item>
+    </string-array>
 </resources>

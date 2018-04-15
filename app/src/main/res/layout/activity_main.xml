@@ -34,7 +34,7 @@
         android:id="@+id/linebrk1"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/points_layout"
+        android:layout_below="@id/points_layout"
         android:background="@color/lineBreak"/>
 
     <LinearLayout
@@ -95,7 +95,7 @@
         android:id="@+id/linebrk2"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/two_panel"
+        android:layout_below="@id/two_panel"
         android:background="@color/lineBreak"/>
 
     <LinearLayout
@@ -131,15 +131,17 @@
         android:id="@+id/linebrk3"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/turn_off"
+        android:layout_above="@id/menu_bar"
         android:background="@color/lineBreak"/>
 
     <LinearLayout
+        android:id="@+id/menu_bar"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:paddingTop="15dp"
         android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linebrk3">
+        android:background="@color/menuBarColor"
+        android:layout_height="wrap_content">
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
