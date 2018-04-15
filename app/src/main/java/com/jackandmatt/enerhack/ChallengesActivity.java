@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +30,9 @@ public class ChallengesActivity extends AppCompatActivity {
         else Log.v("TEST", "It is not null");
         // preparing list data
         prepareListData();
+
+        ProgressBar bar = (ProgressBar) findViewById(R.id.determinateBar);
+
 
         listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
 
