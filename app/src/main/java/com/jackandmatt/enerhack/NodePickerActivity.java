@@ -38,6 +38,7 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
 
     private void initSpinners(){
         Spinner spinner1 = (Spinner) findViewById(R.id.node1_spinner);
+        
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.node_options, android.R.layout.simple_spinner_item);
