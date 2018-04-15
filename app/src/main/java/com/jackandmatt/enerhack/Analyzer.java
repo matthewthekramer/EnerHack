@@ -6,7 +6,6 @@ package com.jackandmatt.enerhack;
  */
 import java.util.concurrent.TimeUnit;
 
-
 public class Analyzer {
     private Client client;
     private boolean running;
@@ -21,6 +20,19 @@ public class Analyzer {
     Analyzer() {
         client = new Client();
         running = true;
+    }
+
+    public int stateOfNode(int node) {
+        String message = packetAnalyzer("api/getnodestatus/all");
+        double[] nodeStates = this.parseVals(message);
+        if(nodeStates[node] == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     /**
