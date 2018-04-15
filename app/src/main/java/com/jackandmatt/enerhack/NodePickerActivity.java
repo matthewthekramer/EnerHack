@@ -52,7 +52,7 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
         try {
             httpClient = new HTTPClient();
             httpClient.updateDaily();
-            double powerUsed = httpClient.getDaily();
+            double powerUsed = httpClient.getDaily()/(60 * 24);
             return (powerUsed - this.computerAverageConsumption());
         } catch (IOException e){
 
@@ -70,7 +70,7 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
 
     private int computeConsumption(int node){
         if(node == 0){
-            return 100;
+            return 300;
         }
         else if(node == 1){
             return 180;
