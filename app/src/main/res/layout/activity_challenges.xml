@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bgColorPrimary"
     tools:context="com.jackandmatt.enerhack.ChallengesActivity">
 
     <ExpandableListView
         android:id="@+id/lvExp"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
     </ExpandableListView>
-</LinearLayout>
+
+    <View
+        android:id="@+id/linebrk3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/menu_bar"
+        android:background="@color/lineBreak"/>
+
+    <LinearLayout
+        android:id="@+id/menu_bar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:paddingTop="15dp"
+        android:orientation="horizontal"
+        android:background="@color/menuBarColor"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_show_chart_black_24px"
+            android:onClick="chart_onClick"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_goal"
+            android:onClick="goal_onClick"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_home_black_24px"
+            android:onClick="home_onClick"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_format_line_spacing_black_24px"
+            android:onClick="challenges_onClick"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_impact"
+            android:onClick="impact_onClick"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

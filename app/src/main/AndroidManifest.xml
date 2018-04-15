@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChallengesActivity"></activity>
+        <activity android:name=".ChallengesActivity" />
+        <activity android:name=".NodePickerActivity"></activity>
     </application>
 
 </manifest>

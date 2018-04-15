@@ -6,4 +6,5 @@
     <color name="bgColorPrimary">#0ab2ac</color>
     <color name="colorTextPrimary">#2a3a24</color>
     <color name="lineBreak">#0704a5</color>
+    <color name="menuBarColor">#b2c1be</color>
 </resources>
