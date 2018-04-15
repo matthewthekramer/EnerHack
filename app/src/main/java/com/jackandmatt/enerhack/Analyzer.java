@@ -4,6 +4,7 @@ package com.jackandmatt.enerhack;
 /**
  * Created by Jack Long on 4/12/2018.
  */
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Analyzer {
@@ -127,4 +128,6 @@ public class Analyzer {
         //Figure out how to analyze response packet into data you can use
         return response;
     }
+
+
 }
