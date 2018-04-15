@@ -24,6 +24,18 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
     private int node5;
     private int node6;
 
+    public double percentageOfAvg() {
+        try{
+            HTTPClient httpClient = new HTTPClient();
+            httpClient.updateDaily();
+            double avg = computerAverageConsumption();
+            double useage = httpClient.getDaily();
+            return (useage / avg);
+        } catch(IOException e){
+
+        }
+      return 0.0;
+    }
     private int computerAverageConsumption() {
         int avgConsumption = 0;
         avgConsumption += computeConsumption(node1);
@@ -58,13 +70,13 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
 
     private int computeConsumption(int node){
         if(node == 0){
-            return 600;
+            return 100;
         }
         else if(node == 1){
-            return 1440;
+            return 180;
         }
         else if(node == 2){
-            return 11;
+            return 15;
         }
         else if(node == 3) {
             return 870;
