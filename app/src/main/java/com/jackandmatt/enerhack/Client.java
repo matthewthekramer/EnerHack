@@ -17,7 +17,7 @@ public class Client {
     public Client() {
         try {
             socket = new DatagramSocket();
-            address = InetAddress.getByName("192.168.1.236"); //TODO find host's name and replace
+            address = InetAddress.getByName("192.168.1.236");
         } catch(UnknownHostException e) {
             System.out.println("couldn't find host");
         } catch(Exception e) {
@@ -38,6 +38,7 @@ public class Client {
         packet = new DatagramPacket(buf, buf.length);
         try {
             socket.receive(packet);
+            System.out.println(packet.toString());
         } catch(IOException e) {
             e.getMessage();
         }
