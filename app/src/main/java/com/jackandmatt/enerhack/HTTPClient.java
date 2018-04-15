@@ -23,11 +23,17 @@ public class HTTPClient {
     }
 
     public void updateDaily() throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+//        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String lResponse = null;
+        try{
+            lResponse = new HTTPRequest().execute( "http://192.168.1.100:8080" ).get();
+
+        }catch(Exception e){}
+
         String input;
-        input = in.readLine();
-        if(input != null) {
-            dailyValue = Double.parseDouble(input);
+//        input = in.readLine();
+        if(lResponse != null) {
+            dailyValue = Double.parseDouble(lResponse);
         }
     }
 

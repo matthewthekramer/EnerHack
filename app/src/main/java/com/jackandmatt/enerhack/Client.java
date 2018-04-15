@@ -3,6 +3,8 @@ package com.jackandmatt.enerhack;
 /**
  * Created by Jack Long on 4/12/2018.
  */
+import android.util.Log;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -17,11 +19,11 @@ public class Client {
     public Client() {
         try {
             socket = new DatagramSocket();
-            address = InetAddress.getByName("192.168.1.236");
+            address = InetAddress.getByName("192.168.1.100");
         } catch(UnknownHostException e) {
-            System.out.println("couldn't find host");
+            Log.v("CLIENTERROR", "couldn't find host");
         } catch(Exception e) {
-            System.out.println("Exception with creating DatagramSocket");
+            Log.v("CLIENTERROR", "Exception with creating DatagramSocket");
         }
     }
 
@@ -30,15 +32,12 @@ public class Client {
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 9931);
         try {
             socket.send(packet);
-            System.out.println(packet.toString());
         } catch(IOException e) {
-            System.out.println("IOexception");
         }
         buf = new byte[256];
         packet = new DatagramPacket(buf, buf.length);
         try {
             socket.receive(packet);
-            System.out.println(packet.toString());
         } catch(IOException e) {
             e.getMessage();
         }

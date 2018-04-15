@@ -193,8 +193,9 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
 
     public void home_onClick(View v){
         Intent send  = new Intent(this, MainActivity.class);
-        send.putExtra("Average", computerAverageConsumption());
+        send.putExtra("Average", percentageOfAvg());
         send.putExtra("Score", calculatorScore());
+        startActivity(send);
 
     }
 

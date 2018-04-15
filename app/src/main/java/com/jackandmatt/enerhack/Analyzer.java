@@ -60,7 +60,6 @@ public class Analyzer {
      */
     public double calcTotalPower() {
         String message = packetAnalyzer("api/getacpoweractive/all");
-        //System.out.println(message);
         double[] vals = this.parseVals(message);
         double total = 0.0;
         for(int i = 0; i < vals.length; i++)
@@ -76,7 +75,6 @@ public class Analyzer {
      */
     public int calcMostUsedNode() {
         String message = packetAnalyzer("api/getacpoweractive/all");
-        //System.out.println(message);
         double[] vals = this.parseVals(message);
         double max = 0;
         int maxNode = 0;
@@ -97,14 +95,12 @@ public class Analyzer {
      */
     public void turnOffNode(int node) {
         String message = packetAnalyzer("api/turnoff/" + node);
-        System.out.println(message);
     }
     /**
      * method that turns off all nodes
      */
     public void turnOffAll() {
         String message = packetAnalyzer("api/turnoff/all");
-        System.out.println(message);
     }
 
     /**
@@ -114,7 +110,6 @@ public class Analyzer {
     public void run() throws InterruptedException {
         String message = "";
         //message = (packetAnalyzer("api/getacpoweractive/all"));
-        System.out.println(message);
         TimeUnit.SECONDS.sleep(5);
 
     }
