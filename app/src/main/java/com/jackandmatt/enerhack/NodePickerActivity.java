@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import java.io.IOException;
+
 public class NodePickerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public final static int FAN = 0;
@@ -33,6 +35,18 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
         return avgConsumption;
     }
 
+    public double calculatorScore()  {
+        HTTPClient httpClient;
+        try {
+            httpClient = new HTTPClient();
+            httpClient.updateDaily();
+            double powerUsed = httpClient.getDaily();
+            return (powerUsed - this.computerAverageConsumption());
+        } catch (IOException e){
+
+        }
+        return 0.0;
+    }
     private double calcEmmissionsSaved() {
         Analyzer a = new Analyzer();
         int avg = this.computerAverageConsumption();
@@ -44,16 +58,16 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
 
     private int computeConsumption(int node){
         if(node == 0){
-            return 24;
+            return 600;
         }
         else if(node == 1){
-            return 50;
+            return 1440;
         }
         else if(node == 2){
-            return 5;
+            return 11;
         }
         else if(node == 3) {
-            return 84;
+            return 870;
         }
         else {
             return 0;
@@ -64,12 +78,7 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_node_picker);
-
         initSpinners();
-
-        Analyzer anal = new Analyzer();
-
-
     }
 
     private void initSpinners(){
