@@ -11,9 +11,9 @@ import android.widget.Spinner;
 public class NodePickerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public final static int FAN = 0;
-    public final static int LIGHT = 0;
-    public final static int CHARGER = 0;
-    public final static int FRIDGE = 0;
+    public final static int LIGHT = 1;
+    public final static int CHARGER = 2;
+    public final static int FRIDGE = 3;
 
     private int node1;
     private int node2;
@@ -22,7 +22,43 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
     private int node5;
     private int node6;
 
+    private int computerAverageConsumption() {
+        int avgConsumption = 0;
+        avgConsumption += computeConsumption(node1);
+        avgConsumption += computeConsumption(node2);
+        avgConsumption += computeConsumption(node3);
+        avgConsumption += computeConsumption(node4);
+        avgConsumption += computeConsumption(node5);
+        avgConsumption += computeConsumption(node6);
+        return avgConsumption;
+    }
 
+    private double calcEmmissionsSaved() {
+        Analyzer a = new Analyzer();
+        int avg = this.computerAverageConsumption();
+        double total = a.calcTotalPower();
+        double saved = avg - total;
+        saved = saved * 0.000018;
+        return 24* saved;
+    }
+
+    private int computeConsumption(int node){
+        if(node == 0){
+            return 24;
+        }
+        else if(node == 1){
+            return 50;
+        }
+        else if(node == 2){
+            return 5;
+        }
+        else if(node == 3) {
+            return 84;
+        }
+        else {
+            return 0;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +73,13 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
     }
 
     private void initSpinners(){
+        Analyzer a = new Analyzer();
         Spinner spinner1 = (Spinner) findViewById(R.id.node1_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
+        if(a.stateOfNode(0) == 0){
+            spinner1.setEnabled(false);
+            spinner1.setClickable(false);
+        }
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.node_options, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
@@ -48,26 +89,46 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
         spinner1.setOnItemSelectedListener(this);
 
         Spinner spinner2 = (Spinner) findViewById(R.id.node2_spinner);
+        if(a.stateOfNode(1) == 0){
+            spinner1.setEnabled(false);
+            spinner1.setClickable(false);
+        }
         // Apply the adapter to the spinner
         spinner2.setAdapter(adapter);
         spinner2.setOnItemSelectedListener(this);
 
         Spinner spinner3 = (Spinner) findViewById(R.id.node3_spinner);
+        if(a.stateOfNode(2) == 0){
+            spinner1.setEnabled(false);
+            spinner1.setClickable(false);
+        }
         // Apply the adapter to the spinner
         spinner3.setAdapter(adapter);
         spinner3.setOnItemSelectedListener(this);
 
         Spinner spinner4 = (Spinner) findViewById(R.id.node4_spinner);
+        if(a.stateOfNode(3) == 0){
+            spinner1.setEnabled(false);
+            spinner1.setClickable(false);
+        }
         // Apply the adapter to the spinner
         spinner4.setAdapter(adapter);
         spinner4.setOnItemSelectedListener(this);
 
         Spinner spinner5 = (Spinner) findViewById(R.id.node5_spinner);
+        if(a.stateOfNode(4) == 0){
+            spinner1.setEnabled(false);
+            spinner1.setClickable(false);
+        }
         // Apply the adapter to the spinner
         spinner5.setAdapter(adapter);
         spinner5.setOnItemSelectedListener(this);
 
         Spinner spinner6 = (Spinner) findViewById(R.id.node6_spinner);
+        if(a.stateOfNode(6) == 0){
+            spinner1.setEnabled(false);
+            spinner1.setClickable(false);
+        }
         // Apply the adapter to the spinner
         spinner6.setAdapter(adapter);
         spinner6.setOnItemSelectedListener(this);

@@ -68,6 +68,7 @@ public class Analyzer {
         }
         return total;
     }
+
     /**
      * calculates node that with highest power consumption
      * @return
