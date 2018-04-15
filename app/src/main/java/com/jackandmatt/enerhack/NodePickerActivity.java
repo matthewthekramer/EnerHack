@@ -58,13 +58,13 @@ public class NodePickerActivity extends AppCompatActivity implements AdapterView
 
     private int computeConsumption(int node){
         if(node == 0){
-            return 600;
+            return 100;
         }
         else if(node == 1){
-            return 1440;
+            return 180;
         }
         else if(node == 2){
-            return 11;
+            return 15;
         }
         else if(node == 3) {
             return 870;
