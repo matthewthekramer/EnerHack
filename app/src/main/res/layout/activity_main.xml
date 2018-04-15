@@ -99,10 +99,12 @@
         android:background="@color/lineBreak"/>
 
     <LinearLayout
+        android:id="@+id/turn_off"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linebrk2"
         android:paddingTop="20dp"
+        android:paddingBottom="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -119,28 +121,54 @@
             android:layout_height="match_parent"
             android:text="Turn Off"
             android:background="@color/colorPrimary"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="turn_off"/>
 
 
     </LinearLayout>
+    <View
+        android:id="@+id/linebrk3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/turn_off"
+        android:background="@color/lineBreak"/>
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingTop="15dp"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@id/linebrk3">
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/ic_show_chart_black_24px"
+            android:onClick="chart_onClick"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/ic_goal"
+            android:onClick="goal_onClick"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/ic_home_black_24px"
+            android:onClick="home_onClick"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_format_line_spacing_black_24px"
+            android:onClick="challenges_onClick"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_impact"
+            android:onClick="impact_onClick"/>
 
 
     </LinearLayout>
